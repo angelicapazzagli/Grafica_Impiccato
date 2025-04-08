@@ -8,23 +8,23 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\39333\\.nuget\\packages\\": {},
+    "C:\\Users\\PAZZAGLI.ANGELICA\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\39333\\OneDrive\\Documenti\\Visual Studio 2022\\Grafica_Impiccato\\Grafica_Impiccato\\Grafica_Impiccato.csproj",
+      "projectUniqueName": "C:\\Users\\PAZZAGLI.ANGELICA\\Documents\\Visual Studio 2022\\Grafica_Impiccato\\Grafica_Impiccato\\Grafica_Impiccato.csproj",
       "projectName": "Grafica_Impiccato",
-      "projectPath": "C:\\Users\\39333\\OneDrive\\Documenti\\Visual Studio 2022\\Grafica_Impiccato\\Grafica_Impiccato\\Grafica_Impiccato.csproj",
-      "packagesPath": "C:\\Users\\39333\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\39333\\OneDrive\\Documenti\\Visual Studio 2022\\Grafica_Impiccato\\Grafica_Impiccato\\obj\\",
+      "projectPath": "C:\\Users\\PAZZAGLI.ANGELICA\\Documents\\Visual Studio 2022\\Grafica_Impiccato\\Grafica_Impiccato\\Grafica_Impiccato.csproj",
+      "packagesPath": "C:\\Users\\PAZZAGLI.ANGELICA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PAZZAGLI.ANGELICA\\Documents\\Visual Studio 2022\\Grafica_Impiccato\\Grafica_Impiccato\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\39333\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PAZZAGLI.ANGELICA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -51,7 +51,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -75,7 +75,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

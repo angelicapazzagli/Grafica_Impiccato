@@ -1,71 +1,26 @@
+using System;
+
 namespace Grafica_Impiccato
 {
     public partial class Form1 : Form
     {
         Random r = new Random();
-        public Form1()
-        {
-            InitializeComponent();
-            while (chiudi == false)
-            {
-                file = scelta_livello(ref n_tentativi, livello);
-                string[] parole = File.ReadAllLines(file);
-                string[] range = new string[10];
-                indizi = ins_indizi(livello);
-                string[] indizi_diff = new string[parole.Length];
-                if (livello == "3" || livello == "Difficile")
-                {
-                    indizi_diff = File.ReadAllLines(indizi);
-                }
-                string[] range_ind = new string[10];
-                scelta_tema(parole, range, range_ind, indizi_diff);
-                utilizzata = true;
-                while (utilizzata == true)
-                {
-                    indice_casuale = r.Next(range.Length - 1);
-                    segreta = range[indice_casuale];
-                    indizio = range_ind[indice_casuale];
-                    if (p_indovinate.Contains(segreta) == false)
-                    {
-                        utilizzata = false;
-                    }
-                }
-                parola_segreta = stringa_array(segreta);
-                sostituta = sostituzione(segreta);
-            }
-            string[] parole_indovinate = p_indovinate.Split(' ');
-            string[] parole_non_indovinate = non_indovinate.Split(' ');
-            for (int i = 0; i < parole_non_indovinate.Length; i++)
-            {
-                for (int j = 0; j < parole_indovinate.Length; j++)
-                {
-                    if (parole_non_indovinate[i] == parole_indovinate[j])
-                    {
-                        parole_non_indovinate[i] = "";
-                    }
-                }
-            }
-            for (int i = 0; i < parole_indovinate.Length; i++)
-            {
-                lblIndovinate.Text += parole_indovinate[i] + "  ";
-            }
-            for (int i = 0; i < parole_non_indovinate.Length; i++)
-            {
-                lblNonIndovinate.Text += parole_non_indovinate[i] + "  ";
-            }
-            lblPunti.Text += punteggio_tot;
-        }
         char lettera;
-        bool utilizzata, utilizzato_j = false, utilizzato_b = false, utilizzato_i = false, chiudi = false, insLettera, insParola;
+        bool utilizzata = false, chiudi = false, insLettera, insParola;
         int indice_casuale = -1, n_tentativi = 0, punteggio_tot = 0, n_jolly = 3, n_indizi = 3, n_bonus = 3;
         string livello, tema, parola_utente, file = "", segreta = "", p_indovinate = "", non_indovinate = "", indizi, indizio = "";
         char[] parola_segreta;
         char[] sostituta;
+        public Form1()
+        {
+            InitializeComponent();
+
+        }
+
         void indovina_parola(ref char[] sostituta, char[] parola_segreta, string segreta, ref int n_tentativi, ref string p_indovinate, ref string non_indovinate, string livello, ref int punteggio_tot)
         {
             int lettere_indovinate = 0, punti;
             string l_provate = "", p_provate = "";
-
             while (sostituta.Contains('_'))
             {
                 punti = 0;
@@ -73,7 +28,7 @@ namespace Grafica_Impiccato
                 {
                     lblParola.Text += (sostituta[i] + " ");
                 }
-                lblTentativi.Text = n_tentativi.ToString();
+                lblTentativi.Text += n_tentativi.ToString();
                 if (chiudi == true)
                 {
                     for (int i = 0; i < sostituta.Length; i++)
@@ -113,7 +68,7 @@ namespace Grafica_Impiccato
                     string[] parole_provate = p_provate.Split(' ');
                     for (int i = 0; i < parole_provate.Length; i++)
                     {
-                        lblParole.Text += (parole_provate[i] + " ");
+                        lblParole.Text += "\n" + parole_provate[i];
                     }
                     p_provate += parola_utente + " ";
                     if (parola_utente.ToLower() == segreta.ToLower())
@@ -140,19 +95,19 @@ namespace Grafica_Impiccato
             bool scelta = false;
             while (scelta == false)
             {
-                if (livello == "Facile" || livello == "1")
+                if (livello == "Facile")
                 {
                     scelta = true;
                     n_tentativi = 3;
                     return "parole_facili.txt";
                 }
-                else if (livello == "Medio" || livello == "2")
+                else if (livello == "Medio")
                 {
                     scelta = true;
                     n_tentativi = 5;
                     return "parole_medie.txt";
                 }
-                else if (livello == "Difficile" || livello == "3")
+                else if (livello == "Difficile")
                 {
                     scelta = true;
                     n_tentativi = 7;
@@ -167,25 +122,25 @@ namespace Grafica_Impiccato
             bool scelta = false;
             while (scelta == false)
             {
-                if (tema == "Paesi" || tema == "1")
+                if (tema == "Paesi")
                 {
                     scelta = true;
                     inizio = 0;
                     fine = 9;
                 }
-                else if (tema == "Calciatori" || tema == "2")
+                else if (tema == "Calciatori")
                 {
                     scelta = true;
                     inizio = 10;
                     fine = 19;
                 }
-                else if (tema == "Mestieri" || tema == "3")
+                else if (tema == "Mestieri")
                 {
                     scelta = true;
                     inizio = 20;
                     fine = 29;
                 }
-                else if (tema == "Brand" || tema == "4")
+                else if (tema == "Brand")
                 {
                     scelta = true;
                     inizio = 30;
@@ -201,7 +156,7 @@ namespace Grafica_Impiccato
         }
         string ins_indizi(string livello)
         {
-            if (livello == "Difficile" || livello == "3")
+            if (livello == "Difficile")
             {
                 return "indizi_difficili.txt";
             }
@@ -239,15 +194,15 @@ namespace Grafica_Impiccato
         int punteggio(string livello)
         {
             int punti = 0;
-            if (livello == "Facile" || livello == "1")
+            if (livello == "Facile")
             {
                 punti = 5;
             }
-            else if (livello == "Medio" || livello == "2")
+            else if (livello == "Medio")
             {
                 punti = 10;
             }
-            else if (livello == "Difficile" || livello == "3")
+            else if (livello == "Difficile")
             {
                 punti = 20;
             }
@@ -486,17 +441,17 @@ namespace Grafica_Impiccato
 
         private void btnJolly_Click(object sender, EventArgs e)
         {
-            bool utilizzato_j = false;
+
         }
 
         private void btnCasuale_Click(object sender, EventArgs e)
         {
-            bool utilizzato_b = false;
+
         }
 
         private void btnSuggerimento_Click(object sender, EventArgs e)
         {
-            bool utilizzato_i = false;
+
         }
 
         private void checkFacile_CheckedChanged(object sender, EventArgs e)
@@ -536,18 +491,78 @@ namespace Grafica_Impiccato
 
         private void btnChiudi_Click(object sender, EventArgs e)
         {
-            chiudi = true;
+            Application.Exit();
         }
         private void txtBoxParola_TextChanged(object sender, EventArgs e)
         {
-            parola_utente = txtBoxParola.Text;
-            insParola = true;
+
         }
 
         private void btnGenera_Click(object sender, EventArgs e)
         {
-
+            lblParola.Text = "";
+            lblTentativi.Text = "TENTATIVI RIMASTI: ";
+            file = scelta_livello(ref n_tentativi, livello);
+            string[] parole = File.ReadAllLines(file);
+            string[] range = new string[10];
+            indizi = ins_indizi(livello);
+            string[] indizi_diff = new string[parole.Length];
+            if (livello == "Difficile")
+            {
+                indizi_diff = File.ReadAllLines(indizi);
+            }
+            string[] range_ind = new string[10];
+            scelta_tema(parole, range, range_ind, indizi_diff);
+            utilizzata = true;
+            while (utilizzata == true)
+            {
+                indice_casuale = r.Next(range.Length - 1);
+                segreta = range[indice_casuale];
+                indizio = range_ind[indice_casuale];
+                if (p_indovinate.Contains(segreta) == false)
+                {
+                    utilizzata = false;
+                }
+            }
+            parola_segreta = stringa_array(segreta);
+            sostituta = sostituzione(segreta);
             indovina_parola(ref sostituta, parola_segreta, segreta, ref n_tentativi, ref p_indovinate, ref non_indovinate, livello, ref punteggio_tot);
+            string[] parole_indovinate = p_indovinate.Split(' ');
+            string[] parole_non_indovinate = non_indovinate.Split(' ');
+            for (int i = 0; i < parole_non_indovinate.Length; i++)
+            {
+                for (int j = 0; j < parole_indovinate.Length; j++)
+                {
+                    if (parole_non_indovinate[i] == parole_indovinate[j])
+                    {
+                        parole_non_indovinate[i] = "";
+                    }
+                }
+            }
+            if (chiudi == true)
+            {
+                for (int i = 0; i < parole_indovinate.Length; i++)
+                {
+                    lblIndovinate.Text += parole_indovinate[i] + "  ";
+                }
+                for (int i = 0; i < parole_non_indovinate.Length; i++)
+                {
+                    lblNonIndovinate.Text += parole_non_indovinate[i] + "  ";
+                }
+            }
+            lblPunti.Text = "PUNTI: " + punteggio_tot;
+        }
+
+        private void lblParola_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInsParola_Click(object sender, EventArgs e)
+        {
+            parola_utente = txtBoxParola.Text;
+            insParola = true;
+            txtBoxParola.Text = "";
         }
     }
 }
