@@ -84,6 +84,7 @@
             lblTentativi = new Label();
             lblCommento = new Label();
             btnInsParola = new Button();
+            btnRisultati = new Button();
             SuspendLayout();
             // 
             // lblTitolo
@@ -100,7 +101,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Georgia", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(331, 91);
+            label3.Location = new Point(331, 96);
             label3.Name = "label3";
             label3.Size = new Size(212, 18);
             label3.TabIndex = 5;
@@ -533,7 +534,7 @@
             // 
             lblParola.AutoSize = true;
             lblParola.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblParola.Location = new Point(373, 135);
+            lblParola.Location = new Point(341, 135);
             lblParola.Name = "lblParola";
             lblParola.Size = new Size(0, 25);
             lblParola.TabIndex = 80;
@@ -665,12 +666,25 @@
             btnInsParola.UseVisualStyleBackColor = true;
             btnInsParola.Click += btnInsParola_Click;
             // 
+            // btnRisultati
+            // 
+            btnRisultati.BackColor = SystemColors.GradientInactiveCaption;
+            btnRisultati.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRisultati.Location = new Point(13, 365);
+            btnRisultati.Name = "btnRisultati";
+            btnRisultati.Size = new Size(184, 25);
+            btnRisultati.TabIndex = 97;
+            btnRisultati.Text = "AGGIORNA RISULTATI";
+            btnRisultati.UseVisualStyleBackColor = false;
+            btnRisultati.Click += btnRisultati_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(816, 450);
+            Controls.Add(btnRisultati);
             Controls.Add(btnInsParola);
             Controls.Add(lblCommento);
             Controls.Add(lblTentativi);
@@ -818,5 +832,6 @@
         private Label lblTentativi;
         private Label lblCommento;
         private Button btnInsParola;
+        private Button btnRisultati;
     }
 }

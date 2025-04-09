@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{56121602-7D12-4191-9C7D-27F53CE0C57A}|Grafica_Impiccato\\Grafica_Impiccato.csproj|solutionrelative:grafica_impiccato\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56121602-7D12-4191-9C7D-27F53CE0C57A}|Grafica_Impiccato\\Grafica_Impiccato.csproj|C:\\Users\\PAZZAGLI.ANGELICA\\Documents\\Visual Studio 2022\\Grafica_Impiccato\\grafica_impiccato\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{56121602-7D12-4191-9C7D-27F53CE0C57A}|Grafica_Impiccato\\Grafica_Impiccato.csproj|c:\\users\\pazzagli.angelica\\documents\\visual studio 2022\\grafica_impiccato\\grafica_impiccato\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{56121602-7D12-4191-9C7D-27F53CE0C57A}|Grafica_Impiccato\\Grafica_Impiccato.csproj|solutionrelative:grafica_impiccato\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -48,9 +48,10 @@
               "RelativeDocumentMoniker": "Grafica_Impiccato\\Form1.Designer.cs",
               "ToolTip": "C:\\Users\\PAZZAGLI.ANGELICA\\Documents\\Visual Studio 2022\\Grafica_Impiccato\\Grafica_Impiccato\\Form1.Designer.cs",
               "RelativeToolTip": "Grafica_Impiccato\\Form1.Designer.cs",
-              "ViewState": "AgIAAPACAAAAAAAAAMBdwBYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T11:08:40.132Z"
+              "WhenOpened": "2025-04-07T11:08:40.132Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,7 +61,7 @@
               "RelativeDocumentMoniker": "Grafica_Impiccato\\Form1.cs",
               "ToolTip": "C:\\Users\\PAZZAGLI.ANGELICA\\Documents\\Visual Studio 2022\\Grafica_Impiccato\\Grafica_Impiccato\\Form1.cs",
               "RelativeToolTip": "Grafica_Impiccato\\Form1.cs",
-              "ViewState": "AgIAAPABAAAAAAAAAAAowO0BAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAAAIoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T11:04:59.053Z",
               "EditorCaption": ""
@@ -74,7 +75,8 @@
               "ToolTip": "C:\\Users\\PAZZAGLI.ANGELICA\\Documents\\Visual Studio 2022\\Grafica_Impiccato\\Grafica_Impiccato\\Form1.cs [Progettazione]",
               "RelativeToolTip": "Grafica_Impiccato\\Form1.cs [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T10:48:44.599Z"
+              "WhenOpened": "2025-04-01T10:48:44.599Z",
+              "EditorCaption": " [Progettazione]"
             }
           ]
         }
