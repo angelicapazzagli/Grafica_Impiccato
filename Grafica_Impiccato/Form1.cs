@@ -16,83 +16,10 @@ namespace Grafica_Impiccato
             InitializeComponent();
         }
 
-        void indovina_parola(char[] sostituta, char[] parola_segreta, string segreta, int n_tentativi, string p_indovinate, string non_indovinate, string livello, int punteggio_tot)
+        void indovina_lettere(ref int n_tentativi, char[] sostituta, char[] parola_segreta, char lettera, string livello, string segreta, ref string p_indovinate, ref string non_indovinate, ref int punteggio_tot)
         {
-            int punti;
-            string l_provate = "", p_provate = "", s;
-            while (sostituta.Contains('_'))
-            {
-                punti = 0;
-                s = "";
-                for (int i = 0; i < sostituta.Length; i++)
-                {
-                    s += sostituta[i] + " ";
-                }
-                lblParola.Text = s;
-                lblTentativi.Text = "TENTATIVI RIMASTI: " + n_tentativi.ToString();
-                if (insLettera == true)
-                {
-                    l_provate += lettera;
-                    char[] lettere_provate = stringa_array(l_provate);
-                    for (int i = 0; i < lettere_provate.Length; i++)
-                    {
-                        lblLettere.Text += lettere_provate[i] + "  ";
-                    }
-                    if (segreta.Contains(lettera))
-                    {
-                        for (int i = 0; i < parola_segreta.Length; i++)
-                        {
-                            if (parola_segreta[i] == lettera && sostituta[i] != lettera)
-                            {
-                                sostituta[i] = lettera;
-                            }
-                        }
-                    }
-                    tentativi_finiti(n_tentativi, segreta, non_indovinate, sostituta, parola_segreta);
-                    if (!sostituta.Contains('_'))
-                    {
-                        p_indovinate += segreta + " ";
-                        punti = punteggio(livello);
-                    }
-                    insLettera = false;
-                }
-                else if (insParola == true)
-                {
-                    string[] parole_provate = p_provate.Split(' ');
-                    for (int i = 0; i < parole_provate.Length; i++)
-                    {
-                        lblParole.Text += "\n" + parole_provate[i];
-                    }
-                    p_provate += parola_utente + " ";
-                    if (parola_utente.ToLower() == segreta.ToLower())
-                    {
-                        lblIndovinate.Text += parola_utente + " ";
-                        for (int i = 0; i < sostituta.Length; i++)
-                        {
-                            sostituta[i] = parola_segreta[i];
-                        }
-                        punti = punteggio(livello);
-                    }
-                    else
-                    {
-                        n_tentativi--;
-                    }
-                    tentativi_finiti(n_tentativi, segreta, non_indovinate, sostituta, parola_segreta);
-                    insParola = false;
-                }
-                punteggio_tot += punti;
-            }
-        }
-        void lettere()
-        {
-            string l_provate = "";
+            string s = "";
             int punti = 0;
-            l_provate += lettera;
-            char[] lettere_provate = stringa_array(l_provate);
-            for (int i = 0; i < lettere_provate.Length; i++)
-            {
-                lblLettere.Text += lettere_provate[i] + "  ";
-            }
             if (segreta.Contains(lettera))
             {
                 for (int i = 0; i < parola_segreta.Length; i++)
@@ -103,41 +30,55 @@ namespace Grafica_Impiccato
                     }
                 }
             }
-            tentativi_finiti(n_tentativi, segreta, non_indovinate, sostituta, parola_segreta);
-            if (!sostituta.Contains('_'))
+            else
             {
+                n_tentativi--;
+            }
+            for (int i = 0; i < sostituta.Length; i++)
+            {
+                s += sostituta[i] + " ";
+            }
+            lblParola.Text = s;
+            lblTentativi.Text = "TENTATIVI RIMASTI: " + n_tentativi.ToString();
+            if (n_tentativi <= 0)
+            {
+                tentativi_finiti(n_tentativi, segreta, ref non_indovinate, sostituta, parola_segreta);
+            }
+            else if (!sostituta.Contains('_'))
+            {
+                lblParola.Text = "PAROLA INDOVINATA.";
                 p_indovinate += segreta + " ";
                 punti = punteggio(livello);
             }
+            punteggio_tot += punti;
         }
-        void parole()
+        void indovina_parole(ref int n_tentativi, char[] sostituta, char[] parola_segreta, ref string p_indovinate, string parola_utente, string livello, string segreta, ref string non_indovinate, ref int punteggio_tot)
         {
-            string p_provate = "";
+            string s = "";
             int punti = 0;
-            string[] parole_provate = p_provate.Split(' ');
-            for (int i = 0; i < parole_provate.Length; i++)
-            {
-                lblParole.Text += "\n" + parole_provate[i];
-            }
-            p_provate += parola_utente + " ";
             if (parola_utente.ToLower() == segreta.ToLower())
             {
-                lblIndovinate.Text += parola_utente + " ";
                 for (int i = 0; i < sostituta.Length; i++)
                 {
                     sostituta[i] = parola_segreta[i];
                 }
+                lblParola.Text = "PAROLA INDOVINATA.";
+                p_indovinate += segreta + " ";
                 punti = punteggio(livello);
             }
             else
             {
                 n_tentativi--;
             }
-            tentativi_finiti(n_tentativi, segreta, non_indovinate, sostituta, parola_segreta);
-            insParola = false;
+            lblTentativi.Text = "TENTATIVI RIMASTI: " + n_tentativi.ToString();
+            if (n_tentativi <= 0)
+            {
+                tentativi_finiti(n_tentativi, segreta, ref non_indovinate, sostituta, parola_segreta);
+            }
+            punteggio_tot += punti;
         }
 
-        string scelta_livello(int n_tentativi, string livello)
+        string scelta_livello(ref int n_tentativi, string livello)
         {
             bool scelta = false;
             while (scelta == false)
@@ -227,16 +168,14 @@ namespace Grafica_Impiccato
             }
             return parola_segreta;
         }
-        void tentativi_finiti(int n_tentativi, string segreta, string non_indovinate, char[] sostituta, char[] parola_segreta)
+        void tentativi_finiti(int n_tentativi, string segreta, ref string non_indovinate, char[] sostituta, char[] parola_segreta)
         {
-            if (n_tentativi <= 0)
+            non_indovinate += segreta + " ";
+            for (int i = 0; i < sostituta.Length; i++)
             {
-                non_indovinate += segreta + " ";
-                for (int i = 0; i < sostituta.Length; i++)
-                {
-                    sostituta[i] = parola_segreta[i];
-                }
+                sostituta[i] = parola_segreta[i];
             }
+            lblParola.Text = "Tentativi esauriti.";
         }
         int punteggio(string livello)
         {
@@ -333,157 +272,183 @@ namespace Grafica_Impiccato
         private void btnA_Click(object sender, EventArgs e)
         {
             lettera = 'a';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnB_Click(object sender, EventArgs e)
         {
             lettera = 'b';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnC_Click(object sender, EventArgs e)
         {
             lettera = 'c';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnD_Click(object sender, EventArgs e)
         {
             lettera = 'd';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnE_Click(object sender, EventArgs e)
         {
             lettera = 'e';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnF_Click(object sender, EventArgs e)
         {
             lettera = 'f';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnG_Click(object sender, EventArgs e)
         {
             lettera = 'g';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnH_Click(object sender, EventArgs e)
         {
             lettera = 'h';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnI_Click(object sender, EventArgs e)
         {
             lettera = 'i';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnJ_Click(object sender, EventArgs e)
         {
             lettera = 'j';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnK_Click(object sender, EventArgs e)
         {
             lettera = 'k';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnL_Click(object sender, EventArgs e)
         {
             lettera = 'l';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnM_Click(object sender, EventArgs e)
         {
             lettera = 'm';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnN_Click(object sender, EventArgs e)
         {
             lettera = 'n';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnO_Click(object sender, EventArgs e)
         {
             lettera = 'o';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnP_Click(object sender, EventArgs e)
         {
             lettera = 'p';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnQ_Click(object sender, EventArgs e)
         {
             lettera = 'q';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnR_Click(object sender, EventArgs e)
         {
             lettera = 'r';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnS_Click(object sender, EventArgs e)
         {
             lettera = 's';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnT_Click(object sender, EventArgs e)
         {
             lettera = 't';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnU_Click(object sender, EventArgs e)
         {
             lettera = 'u';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnV_Click(object sender, EventArgs e)
         {
             lettera = 'v';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnW_Click(object sender, EventArgs e)
         {
             lettera = 'w';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnX_Click(object sender, EventArgs e)
         {
             lettera = 'x';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnY_Click(object sender, EventArgs e)
         {
             lettera = 'y';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnZ_Click(object sender, EventArgs e)
         {
             lettera = 'z';
-            insLettera = true;
+            lblLettere.Text += lettera + " ";
+            indovina_lettere(ref n_tentativi, sostituta, parola_segreta, lettera, livello, segreta, ref p_indovinate, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnJolly_Click(object sender, EventArgs e)
@@ -549,7 +514,9 @@ namespace Grafica_Impiccato
         {
             lblParola.Text = "";
             lblTentativi.Text = "TENTATIVI RIMASTI: ";
-            file = scelta_livello(n_tentativi, livello);
+            lblParole.Text = "Parole provate: ";
+            lblLettere.Text = "Lettere provate: ";
+            file = scelta_livello(ref n_tentativi, livello);
             string[] parole = File.ReadAllLines(file);
             string[] range = new string[10];
             indizi = ins_indizi(livello);
@@ -589,13 +556,18 @@ namespace Grafica_Impiccato
         {
             parola_utente = txtBoxParola.Text;
             insParola = true;
+            lblParole.Text += "\n" + txtBoxParola.Text.ToLower();
             txtBoxParola.Text = "";
+            indovina_parole(ref n_tentativi, sostituta, parola_segreta, ref p_indovinate, parola_utente, livello, segreta, ref non_indovinate, ref punteggio_tot);
         }
 
         private void btnRisultati_Click(object sender, EventArgs e)
         {
             string[] parole_indovinate = p_indovinate.Split(' ');
             string[] parole_non_indovinate = non_indovinate.Split(' ');
+            lblIndovinate.Text = "PAROLE INDOVINATE: ";
+            lblNonIndovinate.Text = "PAROLE NON INDOVINATE: ";
+            lblPunti.Text = "PUNTI: ";
             for (int i = 0; i < parole_non_indovinate.Length; i++)
             {
                 for (int j = 0; j < parole_indovinate.Length; j++)
@@ -614,7 +586,7 @@ namespace Grafica_Impiccato
             {
                 lblNonIndovinate.Text += parole_non_indovinate[i] + "  ";
             }
-            lblPunti.Text = "PUNTI: " + punteggio_tot;
+            lblPunti.Text += punteggio_tot;
         }
     }
 }
