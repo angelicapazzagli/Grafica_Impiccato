@@ -85,13 +85,16 @@
             lblCommento = new Label();
             btnInsParola = new Button();
             btnRisultati = new Button();
+            lblIndizi = new Label();
+            lblBonus = new Label();
+            lblJolly = new Label();
             SuspendLayout();
             // 
             // lblTitolo
             // 
             lblTitolo.AutoSize = true;
             lblTitolo.Font = new Font("Georgia", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblTitolo.Location = new Point(274, 28);
+            lblTitolo.Location = new Point(313, 16);
             lblTitolo.Name = "lblTitolo";
             lblTitolo.Size = new Size(409, 69);
             lblTitolo.TabIndex = 0;
@@ -101,7 +104,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Georgia", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(378, 128);
+            label3.Location = new Point(426, 101);
             label3.Name = "label3";
             label3.Size = new Size(264, 24);
             label3.TabIndex = 5;
@@ -111,7 +114,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Georgia", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(282, 240);
+            label4.Location = new Point(294, 199);
             label4.Name = "label4";
             label4.Size = new Size(189, 20);
             label4.TabIndex = 6;
@@ -121,14 +124,14 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(510, 229);
+            label6.Location = new Point(522, 188);
             label6.Name = "label6";
             label6.Size = new Size(0, 32);
             label6.TabIndex = 10;
             // 
             // btnA
             // 
-            btnA.Location = new Point(227, 284);
+            btnA.Location = new Point(239, 243);
             btnA.Margin = new Padding(3, 4, 3, 4);
             btnA.Name = "btnA";
             btnA.Size = new Size(31, 31);
@@ -139,7 +142,7 @@
             // 
             // btnB
             // 
-            btnB.Location = new Point(265, 284);
+            btnB.Location = new Point(277, 243);
             btnB.Margin = new Padding(3, 4, 3, 4);
             btnB.Name = "btnB";
             btnB.Size = new Size(31, 31);
@@ -150,7 +153,7 @@
             // 
             // btnC
             // 
-            btnC.Location = new Point(303, 284);
+            btnC.Location = new Point(315, 243);
             btnC.Margin = new Padding(3, 4, 3, 4);
             btnC.Name = "btnC";
             btnC.Size = new Size(31, 31);
@@ -161,7 +164,7 @@
             // 
             // btnD
             // 
-            btnD.Location = new Point(341, 284);
+            btnD.Location = new Point(353, 243);
             btnD.Margin = new Padding(3, 4, 3, 4);
             btnD.Name = "btnD";
             btnD.Size = new Size(31, 31);
@@ -172,7 +175,7 @@
             // 
             // btnE
             // 
-            btnE.Location = new Point(378, 284);
+            btnE.Location = new Point(390, 243);
             btnE.Margin = new Padding(3, 4, 3, 4);
             btnE.Name = "btnE";
             btnE.Size = new Size(31, 31);
@@ -183,7 +186,7 @@
             // 
             // btnF
             // 
-            btnF.Location = new Point(416, 284);
+            btnF.Location = new Point(428, 243);
             btnF.Margin = new Padding(3, 4, 3, 4);
             btnF.Name = "btnF";
             btnF.Size = new Size(31, 31);
@@ -194,7 +197,7 @@
             // 
             // btnG
             // 
-            btnG.Location = new Point(454, 284);
+            btnG.Location = new Point(466, 243);
             btnG.Margin = new Padding(3, 4, 3, 4);
             btnG.Name = "btnG";
             btnG.Size = new Size(31, 31);
@@ -205,7 +208,7 @@
             // 
             // btnH
             // 
-            btnH.Location = new Point(227, 323);
+            btnH.Location = new Point(239, 282);
             btnH.Margin = new Padding(3, 4, 3, 4);
             btnH.Name = "btnH";
             btnH.Size = new Size(31, 31);
@@ -216,7 +219,7 @@
             // 
             // btnI
             // 
-            btnI.Location = new Point(265, 323);
+            btnI.Location = new Point(277, 282);
             btnI.Margin = new Padding(3, 4, 3, 4);
             btnI.Name = "btnI";
             btnI.Size = new Size(31, 31);
@@ -227,7 +230,7 @@
             // 
             // btnJ
             // 
-            btnJ.Location = new Point(303, 323);
+            btnJ.Location = new Point(315, 282);
             btnJ.Margin = new Padding(3, 4, 3, 4);
             btnJ.Name = "btnJ";
             btnJ.Size = new Size(31, 31);
@@ -238,7 +241,7 @@
             // 
             // btnK
             // 
-            btnK.Location = new Point(341, 323);
+            btnK.Location = new Point(353, 282);
             btnK.Margin = new Padding(3, 4, 3, 4);
             btnK.Name = "btnK";
             btnK.Size = new Size(31, 31);
@@ -249,7 +252,7 @@
             // 
             // btnL
             // 
-            btnL.Location = new Point(378, 323);
+            btnL.Location = new Point(390, 282);
             btnL.Margin = new Padding(3, 4, 3, 4);
             btnL.Name = "btnL";
             btnL.Size = new Size(31, 31);
@@ -260,7 +263,7 @@
             // 
             // btnM
             // 
-            btnM.Location = new Point(416, 323);
+            btnM.Location = new Point(428, 282);
             btnM.Margin = new Padding(3, 4, 3, 4);
             btnM.Name = "btnM";
             btnM.Size = new Size(31, 31);
@@ -271,7 +274,7 @@
             // 
             // btnN
             // 
-            btnN.Location = new Point(454, 323);
+            btnN.Location = new Point(466, 282);
             btnN.Margin = new Padding(3, 4, 3, 4);
             btnN.Name = "btnN";
             btnN.Size = new Size(31, 31);
@@ -282,7 +285,7 @@
             // 
             // btnO
             // 
-            btnO.Location = new Point(227, 361);
+            btnO.Location = new Point(239, 320);
             btnO.Margin = new Padding(3, 4, 3, 4);
             btnO.Name = "btnO";
             btnO.Size = new Size(31, 31);
@@ -293,7 +296,7 @@
             // 
             // btnP
             // 
-            btnP.Location = new Point(265, 361);
+            btnP.Location = new Point(277, 320);
             btnP.Margin = new Padding(3, 4, 3, 4);
             btnP.Name = "btnP";
             btnP.Size = new Size(31, 31);
@@ -304,7 +307,7 @@
             // 
             // btnQ
             // 
-            btnQ.Location = new Point(303, 361);
+            btnQ.Location = new Point(315, 320);
             btnQ.Margin = new Padding(3, 4, 3, 4);
             btnQ.Name = "btnQ";
             btnQ.Size = new Size(31, 31);
@@ -315,7 +318,7 @@
             // 
             // btnR
             // 
-            btnR.Location = new Point(341, 361);
+            btnR.Location = new Point(353, 320);
             btnR.Margin = new Padding(3, 4, 3, 4);
             btnR.Name = "btnR";
             btnR.Size = new Size(31, 31);
@@ -326,7 +329,7 @@
             // 
             // btnS
             // 
-            btnS.Location = new Point(378, 361);
+            btnS.Location = new Point(390, 320);
             btnS.Margin = new Padding(3, 4, 3, 4);
             btnS.Name = "btnS";
             btnS.Size = new Size(31, 31);
@@ -337,7 +340,7 @@
             // 
             // btnT
             // 
-            btnT.Location = new Point(416, 361);
+            btnT.Location = new Point(428, 320);
             btnT.Margin = new Padding(3, 4, 3, 4);
             btnT.Name = "btnT";
             btnT.Size = new Size(31, 31);
@@ -348,7 +351,7 @@
             // 
             // btnU
             // 
-            btnU.Location = new Point(454, 361);
+            btnU.Location = new Point(466, 320);
             btnU.Margin = new Padding(3, 4, 3, 4);
             btnU.Name = "btnU";
             btnU.Size = new Size(31, 31);
@@ -359,7 +362,7 @@
             // 
             // btnV
             // 
-            btnV.Location = new Point(265, 400);
+            btnV.Location = new Point(277, 359);
             btnV.Margin = new Padding(3, 4, 3, 4);
             btnV.Name = "btnV";
             btnV.Size = new Size(31, 31);
@@ -370,7 +373,7 @@
             // 
             // btnW
             // 
-            btnW.Location = new Point(303, 400);
+            btnW.Location = new Point(315, 359);
             btnW.Margin = new Padding(3, 4, 3, 4);
             btnW.Name = "btnW";
             btnW.Size = new Size(31, 31);
@@ -381,7 +384,7 @@
             // 
             // btnX
             // 
-            btnX.Location = new Point(341, 400);
+            btnX.Location = new Point(353, 359);
             btnX.Margin = new Padding(3, 4, 3, 4);
             btnX.Name = "btnX";
             btnX.Size = new Size(31, 31);
@@ -392,7 +395,7 @@
             // 
             // btnY
             // 
-            btnY.Location = new Point(378, 400);
+            btnY.Location = new Point(390, 359);
             btnY.Margin = new Padding(3, 4, 3, 4);
             btnY.Name = "btnY";
             btnY.Size = new Size(31, 31);
@@ -403,7 +406,7 @@
             // 
             // btnZ
             // 
-            btnZ.Location = new Point(416, 400);
+            btnZ.Location = new Point(428, 359);
             btnZ.Margin = new Padding(3, 4, 3, 4);
             btnZ.Name = "btnZ";
             btnZ.Size = new Size(31, 31);
@@ -429,7 +432,7 @@
             // 
             lblLettere.AutoSize = true;
             lblLettere.Font = new Font("Georgia", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblLettere.Location = new Point(227, 447);
+            lblLettere.Location = new Point(239, 406);
             lblLettere.Name = "lblLettere";
             lblLettere.Size = new Size(120, 18);
             lblLettere.TabIndex = 68;
@@ -439,7 +442,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Georgia", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(544, 239);
+            label1.Location = new Point(556, 198);
             label1.Name = "label1";
             label1.Size = new Size(178, 20);
             label1.TabIndex = 69;
@@ -447,7 +450,7 @@
             // 
             // txtBoxParola
             // 
-            txtBoxParola.Location = new Point(544, 284);
+            txtBoxParola.Location = new Point(556, 243);
             txtBoxParola.Margin = new Padding(3, 4, 3, 4);
             txtBoxParola.Name = "txtBoxParola";
             txtBoxParola.Size = new Size(124, 27);
@@ -458,7 +461,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Georgia", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(745, 49);
+            label2.Location = new Point(837, 51);
             label2.Name = "label2";
             label2.Size = new Size(133, 23);
             label2.TabIndex = 71;
@@ -468,7 +471,7 @@
             // 
             checkFacile.AutoSize = true;
             checkFacile.Font = new Font("Georgia", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            checkFacile.Location = new Point(771, 77);
+            checkFacile.Location = new Point(863, 79);
             checkFacile.Margin = new Padding(3, 4, 3, 4);
             checkFacile.Name = "checkFacile";
             checkFacile.Size = new Size(69, 22);
@@ -481,7 +484,7 @@
             // 
             checkMedio.AutoSize = true;
             checkMedio.Font = new Font("Georgia", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            checkMedio.Location = new Point(771, 111);
+            checkMedio.Location = new Point(863, 113);
             checkMedio.Margin = new Padding(3, 4, 3, 4);
             checkMedio.Name = "checkMedio";
             checkMedio.Size = new Size(71, 22);
@@ -494,7 +497,7 @@
             // 
             checkDifficile.AutoSize = true;
             checkDifficile.Font = new Font("Georgia", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            checkDifficile.Location = new Point(771, 144);
+            checkDifficile.Location = new Point(863, 146);
             checkDifficile.Margin = new Padding(3, 4, 3, 4);
             checkDifficile.Name = "checkDifficile";
             checkDifficile.Size = new Size(81, 22);
@@ -507,7 +510,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Georgia", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(771, 189);
+            label5.Location = new Point(863, 191);
             label5.Name = "label5";
             label5.Size = new Size(72, 23);
             label5.TabIndex = 75;
@@ -517,7 +520,7 @@
             // 
             checkPaesi.AutoSize = true;
             checkPaesi.Font = new Font("Georgia", 9F, FontStyle.Italic);
-            checkPaesi.Location = new Point(771, 223);
+            checkPaesi.Location = new Point(863, 225);
             checkPaesi.Margin = new Padding(3, 4, 3, 4);
             checkPaesi.Name = "checkPaesi";
             checkPaesi.Size = new Size(64, 22);
@@ -530,7 +533,7 @@
             // 
             checkCalciatori.AutoSize = true;
             checkCalciatori.Font = new Font("Georgia", 9F, FontStyle.Italic);
-            checkCalciatori.Location = new Point(771, 256);
+            checkCalciatori.Location = new Point(863, 258);
             checkCalciatori.Margin = new Padding(3, 4, 3, 4);
             checkCalciatori.Name = "checkCalciatori";
             checkCalciatori.Size = new Size(95, 22);
@@ -543,7 +546,7 @@
             // 
             checkMestieri.AutoSize = true;
             checkMestieri.Font = new Font("Georgia", 9F, FontStyle.Italic);
-            checkMestieri.Location = new Point(771, 289);
+            checkMestieri.Location = new Point(863, 291);
             checkMestieri.Margin = new Padding(3, 4, 3, 4);
             checkMestieri.Name = "checkMestieri";
             checkMestieri.Size = new Size(84, 22);
@@ -556,7 +559,7 @@
             // 
             checkBrand.AutoSize = true;
             checkBrand.Font = new Font("Georgia", 9F, FontStyle.Italic);
-            checkBrand.Location = new Point(771, 323);
+            checkBrand.Location = new Point(863, 325);
             checkBrand.Margin = new Padding(3, 4, 3, 4);
             checkBrand.Name = "checkBrand";
             checkBrand.Size = new Size(72, 22);
@@ -569,7 +572,7 @@
             // 
             lblParola.AutoSize = true;
             lblParola.Font = new Font("Georgia", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblParola.Location = new Point(390, 180);
+            lblParola.Location = new Point(405, 143);
             lblParola.Name = "lblParola";
             lblParola.Size = new Size(0, 24);
             lblParola.TabIndex = 80;
@@ -599,7 +602,7 @@
             // 
             lblParole.AutoSize = true;
             lblParole.Font = new Font("Georgia", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblParole.Location = new Point(544, 327);
+            lblParole.Location = new Point(556, 286);
             lblParole.Name = "lblParole";
             lblParole.Size = new Size(116, 18);
             lblParole.TabIndex = 85;
@@ -619,7 +622,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Georgia", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label9.Location = new Point(785, 443);
+            label9.Location = new Point(857, 443);
             label9.Name = "label9";
             label9.Size = new Size(78, 23);
             label9.TabIndex = 88;
@@ -629,12 +632,12 @@
             // 
             btnSuggerimento.BackColor = SystemColors.GradientInactiveCaption;
             btnSuggerimento.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSuggerimento.Location = new Point(736, 553);
+            btnSuggerimento.Location = new Point(823, 553);
             btnSuggerimento.Margin = new Padding(3, 4, 3, 4);
             btnSuggerimento.Name = "btnSuggerimento";
-            btnSuggerimento.Size = new Size(165, 33);
+            btnSuggerimento.Size = new Size(138, 33);
             btnSuggerimento.TabIndex = 89;
-            btnSuggerimento.Text = "SUGGERIMENTO";
+            btnSuggerimento.Text = "INDIZIO";
             btnSuggerimento.UseVisualStyleBackColor = false;
             btnSuggerimento.Click += btnSuggerimento_Click;
             // 
@@ -642,12 +645,12 @@
             // 
             btnCasuale.BackColor = SystemColors.GradientInactiveCaption;
             btnCasuale.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCasuale.Location = new Point(762, 512);
+            btnCasuale.Location = new Point(832, 512);
             btnCasuale.Margin = new Padding(3, 4, 3, 4);
             btnCasuale.Name = "btnCasuale";
-            btnCasuale.Size = new Size(109, 33);
+            btnCasuale.Size = new Size(118, 33);
             btnCasuale.TabIndex = 90;
-            btnCasuale.Text = "CASUALE";
+            btnCasuale.Text = "BONUS";
             btnCasuale.UseVisualStyleBackColor = false;
             btnCasuale.Click += btnCasuale_Click;
             // 
@@ -655,7 +658,7 @@
             // 
             btnJolly.BackColor = SystemColors.GradientInactiveCaption;
             btnJolly.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnJolly.Location = new Point(773, 475);
+            btnJolly.Location = new Point(845, 475);
             btnJolly.Margin = new Padding(3, 4, 3, 4);
             btnJolly.Name = "btnJolly";
             btnJolly.Size = new Size(89, 33);
@@ -668,7 +671,7 @@
             // 
             btnGenera.BackColor = SystemColors.GradientInactiveCaption;
             btnGenera.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGenera.Location = new Point(282, 121);
+            btnGenera.Location = new Point(330, 94);
             btnGenera.Margin = new Padding(3, 4, 3, 4);
             btnGenera.Name = "btnGenera";
             btnGenera.Size = new Size(89, 33);
@@ -681,7 +684,7 @@
             // 
             lblTentativi.AutoSize = true;
             lblTentativi.Font = new Font("Georgia", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblTentativi.Location = new Point(14, 128);
+            lblTentativi.Location = new Point(12, 101);
             lblTentativi.Name = "lblTentativi";
             lblTentativi.Size = new Size(191, 20);
             lblTentativi.TabIndex = 93;
@@ -690,15 +693,15 @@
             // lblCommento
             // 
             lblCommento.AutoSize = true;
-            lblCommento.Font = new Font("Georgia", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblCommento.Location = new Point(390, 519);
+            lblCommento.Font = new Font("Georgia", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblCommento.Location = new Point(330, 443);
             lblCommento.Name = "lblCommento";
-            lblCommento.Size = new Size(0, 18);
+            lblCommento.Size = new Size(0, 20);
             lblCommento.TabIndex = 94;
             // 
             // btnInsParola
             // 
-            btnInsParola.Location = new Point(675, 283);
+            btnInsParola.Location = new Point(687, 242);
             btnInsParola.Margin = new Padding(3, 4, 3, 4);
             btnInsParola.Name = "btnInsParola";
             btnInsParola.Size = new Size(27, 31);
@@ -719,12 +722,45 @@
             btnRisultati.UseVisualStyleBackColor = false;
             btnRisultati.Click += btnRisultati_Click;
             // 
+            // lblIndizi
+            // 
+            lblIndizi.AutoSize = true;
+            lblIndizi.Font = new Font("Georgia", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblIndizi.Location = new Point(12, 171);
+            lblIndizi.Name = "lblIndizi";
+            lblIndizi.Size = new Size(155, 20);
+            lblIndizi.TabIndex = 98;
+            lblIndizi.Text = "INDIZI RIMASTI: ";
+            // 
+            // lblBonus
+            // 
+            lblBonus.AutoSize = true;
+            lblBonus.Font = new Font("Georgia", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblBonus.Location = new Point(12, 151);
+            lblBonus.Name = "lblBonus";
+            lblBonus.Size = new Size(157, 20);
+            lblBonus.TabIndex = 99;
+            lblBonus.Text = "BONUS RIMASTI: ";
+            // 
+            // lblJolly
+            // 
+            lblJolly.AutoSize = true;
+            lblJolly.Font = new Font("Georgia", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblJolly.Location = new Point(12, 131);
+            lblJolly.Name = "lblJolly";
+            lblJolly.Size = new Size(149, 20);
+            lblJolly.TabIndex = 100;
+            lblJolly.Text = "JOLLY RIMASTI: ";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(933, 600);
+            ClientSize = new Size(998, 600);
+            Controls.Add(lblJolly);
+            Controls.Add(lblBonus);
+            Controls.Add(lblIndizi);
             Controls.Add(btnRisultati);
             Controls.Add(btnInsParola);
             Controls.Add(lblCommento);
@@ -875,5 +911,8 @@
         private Label lblCommento;
         private Button btnInsParola;
         private Button btnRisultati;
+        private Label lblIndizi;
+        private Label lblBonus;
+        private Label lblJolly;
     }
 }

@@ -1,40 +1,40 @@
-Paese dell'Asia centrale con la capitale Tashkent.
-Microstato tra Svizzera e Austria.
-Arcipelago nell'Oceano Indiano, noto per le sue spiagge.
-Paese africano famoso per le cascate Vittoria.
-Stato dell'Africa sudorientale, con una lunga costa sull'Oceano Indiano.
-Isola caraibica famosa per le spiagge bianche e il rum.
-Paese nel Caucaso, ricco di petrolio e gas naturale.
-Paese africano noto per il Lago Malawi.
-Paese centrale americano con antiche rovine Maya.
-Stato dell'America centrale, famoso per le sue rovine Maya.
-Difensore svizzero, noto per la sua solidità.
-Ex centrocampista olandese, famoso per le sue qualità tecniche.
-Ex calciatore argentino, simbolo di una squadra di Buenos Aires.
-Portiere polacco, ex giocatore di una grande squadra inglese.
-Centrocampista turco, noto per la sua visione di gioco.
-Centrocampista brasiliano, noto per il suo controllo di palla.
-Centrocampista uruguaiano, noto per la sua grinta.
-Portiere sloveno, simbolo di una grande squadra milanese.
-Calciatore islandese, conosciuto per la sua tecnica e visione di gioco.
-Terzino sinistro argentino, noto per le sue doti difensive.
-Esperto di fenomeni atmosferici.
-Medico specializzato in chirurgia del sistema nervoso.
-Esperto di vini e bevande alcoliche.
-Esperto di educazione e sviluppo.
-Esperto di pietre preziose e gemme.
-Artigiano che lavora il legno.
-Professionista che prepara e serve bevande alcoliche.
-Persona che pratica immersioni subacquee professionali.
-Professionista che cura i disturbi psicologici.
-Lavoratore che pulisce i camini.
-Marchio di moda famoso per l'alta moda.
-Casa di moda francese, celebre per borse e accessori di lusso.
-Marchio britannico famoso per il trench coat e il check pattern.
-Designer di scarpe francese, noto per la suola rossa.
-Azienda austriaca famosa per i cristalli e gioielli.
-Marca francese di alta moda, famosa per le sue collezioni.
-Marchio francese noto per borse e accessori di lusso.
-Designer di moda francese, noto per i suoi abiti minimalisti.
-Brand italiano di moda, noto per i jeans e abbigliamento casual.
-Casa di gioielleria francese, famosa per i suoi orologi e gioielli.
+PAESE DELL'ASIA CENTRALE CON LA CAPITALE TASHKENT
+MICROSTATO TRA SVIZZERA E AUSTRIA
+ARCIPELAGO NELL'OCEANO INDIANO, NOTO PER LE SUE SPIAGGE
+PAESE AFRICANO FAMOSO PER LE CASCATE VITTORIA
+STATO DELL'AFRICA SUDORIENTALE, CON UNA LUNGA COSTA SULL'OCEANO INDIANO
+ISOLA CARAIBICA FAMOSA PER LE SPIAGGE BIANCHE E IL RUM
+PAESE NEL CAUCASO, RICCO DI PETROLIO E GAS NATURALE
+PAESE AFRICANO NOTO PER IL LAGO MALAWI
+PAESE CENTRALE AMERICANO CON ANTICHE ROVINE MAYA
+STATO DELL'AMERICA CENTRALE, FAMOSO PER LE SUE ROVINE MAYA
+DIFENSORE SVIZZERO, NOTO PER LA SUA SOLIDITÀ
+EX CENTROCAMPISTA OLANDESE, FAMOSO PER LE SUE QUALITÀ TECNICHE
+EX CALCIATORE ARGENTINO, SIMBOLO DI UNA SQUADRA DI BUENOS AIRES
+PORTIERE POLACCO, EX GIOCATORE DI UNA GRANDE SQUADRA INGLESE
+CENTROCAMPISTA TURCO, NOTO PER LA SUA VISIONE DI GIOCO
+CENTROCAMPISTA BRASILIANO, NOTO PER IL SUO CONTROLLO DI PALLA
+CENTROCAMPISTA URUGUAIANO, NOTO PER LA SUA GRINTA
+PORTIERE SLOVENO, SIMBOLO DI UNA GRANDE SQUADRA MILANESE
+CALCIATORE ISLANDESE, CONOSCIUTO PER LA SUA TECNICA E VISIONE DI GIOCO
+TERZINO SINISTRO ARGENTINO, NOTO PER LE SUE DOTI DIFENSIVE
+ESPERTO DI FENOMENI ATMOSFERICI
+MEDICO SPECIALIZZATO IN CHIRURGIA DEL SISTEMA NERVOSO
+ESPERTO DI VINI E BEVANDE ALCOLICHE
+ESPERTO DI EDUCAZIONE E SVILUPPO
+ESPERTO DI PIETRE PREZIOSE E GEMME
+ARTIGIANO CHE LAVORA IL LEGNO
+PROFESSIONISTA CHE PREPARA E SERVE BEVANDE ALCOLICHE
+PERSONA CHE PRATICA IMMERSIONI SUBACQUEE PROFESSIONALI
+PROFESSIONISTA CHE CURA I DISTURBI PSICOLOGICI
+LAVORATORE CHE PULISCE I CAMINI
+MARCHIO DI MODA FAMOSO PER L'ALTA MODA
+CASA DI MODA FRANCESE, CELEBRE PER BORSE E ACCESSORI DI LUSSO
+MARCHIO BRITANNICO FAMOSO PER IL TRENCH COAT E IL CHECK PATTERN
+DESIGNER DI SCARPE FRANCESE, NOTO PER LA SUOLA ROSSA
+AZIENDA AUSTRIACA FAMOSA PER I CRISTALLI E GIOIELLI
+MARCA FRANCESE DI ALTA MODA, FAMOSA PER LE SUE COLLEZIONI
+MARCHIO FRANCESE NOTO PER BORSE E ACCESSORI DI LUSSO
+DESIGNER DI MODA FRANCESE, NOTO PER I SUOI ABITI MINIMALISTI
+BRAND ITALIANO DI MODA, NOTO PER I JEANS E ABBIGLIAMENTO CASUAL
+CASA DI GIOIELLERIA FRANCESE, FAMOSA PER I SUOI OROLOGI E GIOIELLI

@@ -6,7 +6,7 @@ namespace Grafica_Impiccato
     {
         Random r = new Random();
         char lettera;
-        bool utilizzata = false, chiudi = false, insLettera, insParola;
+        bool utilizzata = false, utilizzato_i, utilizzato_j, utilizzato_b;
         int indice_casuale = -1, n_tentativi = 0, punteggio_tot = 0, n_jolly = 3, n_indizi = 3, n_bonus = 3;
         string livello, tema, parola_utente, file = "", segreta = "", p_indovinate = "", non_indovinate = "", indizi, indizio = "";
         char[] parola_segreta;
@@ -14,6 +14,9 @@ namespace Grafica_Impiccato
         public Form1()
         {
             InitializeComponent();
+            lblJolly.Text += "3";
+            lblBonus.Text += "3";
+            lblIndizi.Text += "3";
         }
 
         void indovina_lettere(ref int n_tentativi, char[] sostituta, char[] parola_segreta, char lettera, string livello, string segreta, ref string p_indovinate, ref string non_indovinate, ref int punteggio_tot)
@@ -194,7 +197,7 @@ namespace Grafica_Impiccato
             }
             return punti;
         }
-        void jolly(char[] sostituta, string segreta, int n_jolly, bool utilizzato_j)
+        void jolly(char[] sostituta, string segreta, ref int n_jolly, bool utilizzato_j)
         {
             if (utilizzato_j == false)
             {
@@ -202,19 +205,22 @@ namespace Grafica_Impiccato
                 {
                     if (sostituta[0] == '_' || sostituta[sostituta.Length - 1] == '_')
                     {
+                        string s = "";
                         sostituta[0] = segreta[0];
                         sostituta[sostituta.Length - 1] = segreta[sostituta.Length - 1];
                         n_jolly--;
                         utilizzato_j = true;
                         for (int i = 0; i < sostituta.Length; i++)
                         {
-                            lblParola.Text += sostituta[i] + " ";
+                            s += sostituta[i] + " ";
                         }
+                        lblParola.Text = s;
+                        lblJolly.Text = "JOLLY RIMASTI: " + n_jolly;
                     }
                 }
             }
         }
-        void utilizzo_indizi(int n_indizi, string livello, char[] sostituta, string indizio, bool utilizzato_i)
+        void utilizzo_indizi(ref int n_indizi, string livello, char[] sostituta, string indizio, bool utilizzato_i)
         {
             if (utilizzato_i == false)
             {
@@ -225,15 +231,12 @@ namespace Grafica_Impiccato
                         n_indizi--;
                         utilizzato_i = true;
                         lblCommento.Text = indizio;
-                        for (int i = 0; i < sostituta.Length; i++)
-                        {
-                            lblParola.Text += sostituta[i] + " ";
-                        }
+                        lblIndizi.Text = "INDIZI RIMASTI: " + n_indizi;
                     }
                 }
             }
         }
-        void bonus(int bonus_lettera, string segreta, char[] sostituta, string livello, bool utilizzato_b)
+        void bonus(ref int n_bonus, string segreta, char[] sostituta, string livello, bool utilizzato_b)
         {
             int indice = -1, casuale;
             char lettera;
@@ -241,9 +244,10 @@ namespace Grafica_Impiccato
             {
                 if (utilizzato_b == false)
                 {
-                    if (bonus_lettera > 0)
+                    if (n_bonus > 0)
                     {
-                        bonus_lettera--;
+                        string s = "";
+                        n_bonus--;
                         utilizzato_b = true;
                         while (indice == -1)
                         {
@@ -261,10 +265,12 @@ namespace Grafica_Impiccato
                                 sostituta[i] = lettera;
                             }
                         }
-                    }
-                    for (int i = 0; i < sostituta.Length; i++)
-                    {
-                        lblParola.Text += sostituta[i] + " ";
+                        for (int i = 0; i < sostituta.Length; i++)
+                        {
+                            s += sostituta[i] + " ";
+                        }
+                        lblParola.Text = s;
+                        lblBonus.Text = "BONUS RIMASTI: " + n_bonus;
                     }
                 }
             }
@@ -453,17 +459,17 @@ namespace Grafica_Impiccato
 
         private void btnJolly_Click(object sender, EventArgs e)
         {
-
+            jolly(sostituta, segreta, ref n_jolly, utilizzato_j);
         }
 
         private void btnCasuale_Click(object sender, EventArgs e)
         {
-
+            bonus(ref n_bonus, segreta, sostituta, livello, utilizzato_b);
         }
 
         private void btnSuggerimento_Click(object sender, EventArgs e)
         {
-
+            utilizzo_indizi(ref n_indizi, livello, sostituta, indizio, utilizzato_i);
         }
 
         private void checkFacile_CheckedChanged(object sender, EventArgs e)
@@ -516,6 +522,10 @@ namespace Grafica_Impiccato
             lblTentativi.Text = "TENTATIVI RIMASTI: ";
             lblParole.Text = "Parole provate: ";
             lblLettere.Text = "Lettere provate: ";
+            lblCommento.Text = "";
+            utilizzato_i = false;
+            utilizzato_j = false;
+            utilizzato_b = false;
             file = scelta_livello(ref n_tentativi, livello);
             string[] parole = File.ReadAllLines(file);
             string[] range = new string[10];
@@ -555,7 +565,6 @@ namespace Grafica_Impiccato
         private void btnInsParola_Click(object sender, EventArgs e)
         {
             parola_utente = txtBoxParola.Text;
-            insParola = true;
             lblParole.Text += "\n" + txtBoxParola.Text.ToLower();
             txtBoxParola.Text = "";
             indovina_parole(ref n_tentativi, sostituta, parola_segreta, ref p_indovinate, parola_utente, livello, segreta, ref non_indovinate, ref punteggio_tot);
